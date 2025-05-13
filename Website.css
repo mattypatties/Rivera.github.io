@@ -1,0 +1,255 @@
+/*imported fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    font-family: Arial, sans-serif;/*Defualt font*/
+    margin: 0;/* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background-color: #f6f6f6;
+    color: #181818; 
+}
+
+/* Keyframe animation for fading in content (for the website title and the looped video) */
+@keyframes fade-in{
+    0%{
+        opacity: 0; /* The animation starts fully transparent */
+        transform: translateY (50px) scale(0.9); /* slide up animation */ 
+    }
+}
+
+/* Navigation bar */
+nav {
+    background-color: #404040;
+    padding: 20px 0;/* Adds vertical padding */
+    text-align: right;/* Centers the navigation links */
+    display: flex;/* Easier layout */
+    justify-content: right;
+    align-items: right;
+    width: 100vw;/* full viewport width */
+    height: 40px;
+}
+
+/* Navigation links */
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    color: #eaeaea;
+    text-decoration: none;/* Removes underlining from links */
+    padding: 10px 20px;/* Adds padding around each link */
+}
+
+/* Changes background color when hovering over the links */
+nav a:hover {
+    background-color: #6b879f;
+    border: solid;
+    border-radius: 25px;
+}
+
+/* Logo properties */
+.logo {
+    width: 40px;
+    height: 40px;
+    padding-right: 20px;
+}
+
+/* Website main title */
+.title{
+font-family: 'Cal Sans', sans-serif; /* imported font */
+font-size: 500%;
+color: #ffffff;
+text-shadow: 0 8px 12px rgba(97, 131, 187, 0.79);
+position: absolute;/* positions it absolutely inside the containter */
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%); /* perfect centering */
+animation: fade-in 4.0s; /* a quick fade-in animation */
+}
+
+.playerdiv{
+    height: 100vh; /* full viewport height */
+    position: relative;
+}
+
+/* Looped video */
+.player{
+    position: absolute; /* Positions absolutely in the container */
+    width: 100%; 
+    height: 100%;
+    z-index: -1; /* the video will be pushed behind */
+    object-fit: cover; /* cover the whole area */
+    animation: fade-in 3.2s; /* a fade-in animation */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    filter: saturate(1);
+    /* A fade filter below the video */
+}
+
+/* Intoduction */
+.intro{
+    float: left; /* the content will be moved to the left */
+    width: 500px;
+    margin: 0;
+    margin-left: 175px;
+    margin-top: 75px;
+}
+
+.intro h2{
+    font-family: 'Cal Sans', sans-serif;
+    color: rgb(117, 156, 214);
+}
+
+.intro p{
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* My picture */
+.Matty{
+    display: flex; /* easier positioning */
+    float: right;
+    width: 400px;
+    height: 250px;
+    margin: 0;
+    margin-right: 175px;
+    margin-top: 100px;
+    border-radius: 8px;/* Rounds the corners of the image */
+    margin-bottom: 50px; /* Spacing below the image */
+    filter: saturate(1);
+}
+
+.footer{
+    margin-top: 150px;
+    width: 100%;
+    padding-top: 20px;
+    padding: 60px;
+    background-color: #404040;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+}
+
+.footer div{
+    text-align: center;
+}
+
+.footer div h3{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    color: #eaeaea;
+}
+
+.footer div a{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    text-align: left;
+    color: #eaeaea;
+}
+
+.footer div p{
+    font-family: 'Montserrat', sans-serif;
+    color: #eaeaea;
+    text-decoration: none;
+}
+
+.column2{
+    flex-grow: 1;
+}
+
+.guitar-section {
+    padding: 15px;
+    background-color: #f7f7f7;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.guitar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Columns */
+    gap: 20px; /* Space between items (row & column) */
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.guitar-item {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.guitar-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.guitar-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.guitar-item a {
+    text-decoration: none;
+}
+
+.guitar-item:hover {
+    transform: scale(1.10); /* Slightly zooms in */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.263); /* Enhanced shadow */
+  }
+
+  @media (max-width: 600px) {
+    .intro, .Matty {
+        width: 90%;
+        margin: 20px auto;
+        float: none;
+        text-align: center;
+    }
+
+    .guitar-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 200%;
+        top: 30%;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .intro, .Matty {
+        width: 80%;
+        margin: 20px auto;
+        float: none;
+    }
+
+    .guitar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .title {
+        font-size: 300%;
+    }
+}
